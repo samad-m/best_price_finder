@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Best Price Finder</title>
+
+<div class="title">
+<!-- This where the logo will go goes -->
+    <img src="/static/img/title_new.png" class="resize">
+</div>
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+    <!-- <h1 style="text-align: center">Best Price Finder</h1> -->
+    <div class="form" style="font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center; border:none;">
+        <form action="/" method="POST">
+            <div class="label" style="color:#434343">Enter Amazon product URL:</div>
+            <input style="font-size:12pt;" type="text" name="input_url" id="input_url">
+            <div class="label" style="color:#434343">Enter # of listings to view:</div>
+            <input type="number" name="input_num_listings" id="input_num_listings" min="1" max="100" /><br />
+
+            <input style="width:200px;" type="submit" value="Submit" />
+        </form>
+    </div>
+</div>
+
+<div class="output_products">
+    {{df|safe}}
+</div>
+
+<p style="position:fixed; bottom:0; text-align:center; width:100%; color: #ffc39f;">
+        Created by Samad Memon:
+        <a href="https://www.linkedin.com/in/samad-memon/" target="_blank" style="color:#f7965c";>
+          LinkedIn
+        </a> |
+        <a href="https://github.com/samad-m" target="_blank" style="color:#f7965c">GitHub</a>
+</p>
+
+{% endblock %}
